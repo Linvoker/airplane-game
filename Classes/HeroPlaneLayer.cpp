@@ -1,6 +1,10 @@
 #include "HeroPlaneLayer.h"
 using namespace cocos2d;
 
+Sprite *HeroPlaneLayer::getHeroPlaneSprite() {
+	return this->hero_plane_sprite;
+}
+
 bool HeroPlaneLayer::init() {
 	if (!Layer::init()) {
 		return false;

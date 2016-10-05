@@ -8,6 +8,7 @@ using namespace cocos2d;
 class HeroPlaneLayer : public cocos2d::Layer {
 public:
 	CREATE_FUNC(HeroPlaneLayer);
+	Sprite *getHeroPlaneSprite();
 private:
 	virtual bool init() override;
 	virtual void update(float delta) override;

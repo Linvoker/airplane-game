@@ -14,7 +14,7 @@ bool GameBackgroundLayer::init() {
 
 	//第一张背景图片
 	game_background_sprite1 = Sprite::createWithSpriteFrameName("img_bg_3.jpg");
-	this->addChild(game_background_sprite1, 0);//tag为1的精灵
+	this->addChild(game_background_sprite1, 0);
 	//game_background_sprite1->setAnchorPoint(Point(0, 0));//描点默认为图片中点
 	game_background_sprite1->setPosition(0, 0);//setposition是sprite描点相对当前layer描点的坐标值
 	//game_background_sprite1->setScale(2);
