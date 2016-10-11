@@ -8,14 +8,27 @@ using namespace cocos2d;
 class EnemySprite : public cocos2d::Sprite {
 public:
 	float getEnemySpeed();
-	static EnemySprite *createWithSpriteFrameName(const std::string& sprite_frame_name);
-	static EnemySprite* createWithSpriteFrame(SpriteFrame *sprite_frame);
+	int getEnemyScore();
+	static EnemySprite *createWithSpriteFrameNameNum(int num);
+	static EnemySprite* createWithSpriteFrameNum(SpriteFrame *sprite_frame, int num);
+	void displayAction();
+	void decreaseHpValBy(int);
+	void killEnemy();
+	bool isExploding();
+	void enemyExploded();
+	int getDamageVal();
 protected:
-	EnemySprite();
+	EnemySprite(int num);
 private:
-	float getRandomFloat(float, float);
 
-	float enemy_speed = 1.0f;
-
+	enum EnemyType {
+		LEVEL1,
+		LEVEL2,
+		LEVEL3,
+	} enemy_type;
+	float enemy_speed;
+	int hp_val;
+	int shooted_score;
+	int damage_val;
 };
 #endif

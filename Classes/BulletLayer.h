@@ -15,13 +15,14 @@ public:
 private:
 	virtual bool init() override;
 	void createBullet(float);
+	void unscheduleAll(Ref *);
+	void callbackToChangebullet(Ref *);
 
 	std::string bullet_name;
 	Size bullet_size;
 	float bullet_speed;//越小越快
 	float shoot_interval;
 	float damage_val;
-	//std::list<Sprite *> bullet_table;//用std::list维护一个子弹列表，因为只需要插入、删除和遍历操作。还是用自带的Vector<Node*>_children好了
 	
 };
 #endif

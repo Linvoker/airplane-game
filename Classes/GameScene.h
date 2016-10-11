@@ -6,6 +6,9 @@
 #include "HeroPlaneLayer.h"
 #include "BulletLayer.h"
 #include "EnemyLayer.h"
+#include "GameControlLayer.h"
+#include "BonusLayer.h"
+
 using namespace cocos2d;
 
 class GameScene : public cocos2d::Scene {
@@ -15,6 +18,10 @@ public:
 	GameBackgroundLayer *getGameBackgroundLayer();
 	HeroPlaneLayer *getHeroPlaneLayer();
 	BulletLayer *getBulletLayer();
+	EnemyLayer *getEnemyLayer();
+	GameControlLayer *getGameControlLayer();
+	BonusLayer *getBonusLayer();
+
 private:
 	virtual bool init() override;
 
@@ -22,5 +29,7 @@ private:
 	HeroPlaneLayer *hero_plane_layer;
 	BulletLayer *bullet_layer;
 	EnemyLayer *enemy_layer;
+	GameControlLayer *game_control_layer;
+	BonusLayer *bonus_layer;
 };
 #endif

@@ -77,6 +77,20 @@ bool AppDelegate::applicationDidFinishLaunching() {
 	SpriteFrameCache *frame_cache = SpriteFrameCache::getInstance();
 	frame_cache->addSpriteFramesWithFile("texture.plist", "texture.png");
 
+	//将敌机爆炸动作加入AnimationCache
+	Vector<SpriteFrame *> enemy_explode_frames;
+	enemy_explode_frames.pushBack(SpriteFrameCache::getInstance()->getSpriteFrameByName("explosion01.png"));
+	enemy_explode_frames.pushBack(SpriteFrameCache::getInstance()->getSpriteFrameByName("explosion02.png"));
+	enemy_explode_frames.pushBack(SpriteFrameCache::getInstance()->getSpriteFrameByName("explosion03.png"));
+	enemy_explode_frames.pushBack(SpriteFrameCache::getInstance()->getSpriteFrameByName("explosion04.png"));
+	enemy_explode_frames.pushBack(SpriteFrameCache::getInstance()->getSpriteFrameByName("explosion05.png"));
+	enemy_explode_frames.pushBack(SpriteFrameCache::getInstance()->getSpriteFrameByName("explosion06.png"));
+	enemy_explode_frames.pushBack(SpriteFrameCache::getInstance()->getSpriteFrameByName("explosion07.png"));
+	enemy_explode_frames.pushBack(SpriteFrameCache::getInstance()->getSpriteFrameByName("explosion08.png"));
+	enemy_explode_frames.pushBack(SpriteFrameCache::getInstance()->getSpriteFrameByName("explosion09.png"));
+	Animation *enemy_explode_animation = Animation::createWithSpriteFrames(enemy_explode_frames, 0.03f);
+	AnimationCache::getInstance()->addAnimation(enemy_explode_animation, "enemy_exploded");
+
     // create a scene. it's an autorelease object
     auto scene = WelcomeScene::create();
 

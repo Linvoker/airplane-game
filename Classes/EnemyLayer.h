@@ -10,8 +10,10 @@ public:
 private:
 	virtual bool init() override;
 	void addEnemyPlane(float);
-	float getRandomFloat(float, float);
+	virtual void update(float) override;
+	void unscheduleAll(Ref*);
+	void killAllEnemyBonus(Ref *);
 
-	float produce_interval = 1.0f;
+	float produce_interval = 0.5f;
 };
 #endif

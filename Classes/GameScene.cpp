@@ -2,6 +2,9 @@
 #include "GameBackgroundLayer.h"
 #include "HeroPlaneLayer.h"
 #include "BulletLayer.h"
+#include "GameControlLayer.h"
+#include "BonusLayer.h"
+
 using namespace cocos2d;
 
 bool GameScene::init() {
@@ -33,6 +36,16 @@ bool GameScene::init() {
 	this->addChild(enemy_layer, 1);
 	this->enemy_layer->setPosition(origin.x, origin.y);
 
+	//¿ØÖÆ²ã
+	this->game_control_layer = GameControlLayer::create();
+	this->addChild(game_control_layer, 2);
+	this->game_control_layer->setPosition(origin.x, origin.y);
+
+	//gift²ã
+	this->bonus_layer = BonusLayer::create();
+	this->addChild(bonus_layer, 1);
+	this->bonus_layer->setPosition(origin.x, origin.y);
+
 	return true;
 }
 
@@ -44,4 +57,15 @@ HeroPlaneLayer *GameScene::getHeroPlaneLayer() {
 }
 BulletLayer *GameScene::getBulletLayer() {
 	return this->bullet_layer;
+}
+EnemyLayer *GameScene::getEnemyLayer() {
+	return this->enemy_layer;
+}
+
+GameControlLayer *GameScene::getGameControlLayer() {
+	return this->game_control_layer;
+}
+
+BonusLayer *GameScene::getBonusLayer() {
+	return this->bonus_layer;
 }
